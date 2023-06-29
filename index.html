@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./loginstyle.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="submit" value="Login">
+    </form>
+    <p id="errorMessage" class="error-message"></p>
+  </div>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
+  var password = document.getElementById("password").value;
+  var errorMessage = document.getElementById("errorMessage");
+
+  var hashedPassword = password * 2; // Multiply password by 2 for storage
+
+  // Set a default password for testing purposes
+  var defaultPassword = "1234";
+  var hashedDefaultPassword = defaultPassword * 2;
+
+  if (localStorage.getItem("password") === String(hashedPassword) || password === defaultPassword) {
+    sessionStorage.setItem("authenticated", "true"); // Set authentication flag in session storage
+    window.location.href = "./main.html"; // Redirect to the main page
+  } else {
+    errorMessage.textContent = "Incorrect password!";
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+    if (navigator.vibrate) {
+      navigator.vibrate(100); // Vibrate for 100 milliseconds
+    }
+  }
+});
+</script>
+</body>
+</html>

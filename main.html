@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My-lator</title>
+    <link rel="stylesheet" href="./mainstyle.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>My-lator</h1>
+
+      <div class="input-container">
+        <label for="input">Krle bhy tu bhi💀</label>
+        <textarea
+          placeholder="Tap To Paste Or Write Your Message"
+          id="input"
+          rows="4"
+          cols="50"
+        ></textarea>
+      </div>
+
+      <div class="button-container">
+        <button onclick="translateToSymbols()">Translate to Symbols</button>
+        <button onclick="translateToEnglish()">Translate to English</button>
+      </div>
+
+      <div id="output">
+        <p id="outputplaceholderText">Generated Text Here!!!</p>
+      </div>
+
+      <div id="popup" class="popup">Text Copied!</div>
+    </div>
+    <div class="btn">
+      <button id="clear-button" onclick="clearAll()">Clear All</button>
+      <button id="copy-button" onclick="copyText()">Copy</button>
+    </div>
+    <div class="logout-button">
+      <form action="./index.html">
+        <input type="submit" value="Logout" />
+      </form>
+    </div>
+    
+    <script src="./mainscript.js"></script>
+    
+  </body>
+</html>
