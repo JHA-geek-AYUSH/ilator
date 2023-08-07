@@ -31,7 +31,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     sessionStorage.setItem("authenticated", "true"); // Set authentication flag in session storage
     window.location.href = "./main.html"; // Redirect to the main page
   } else {
-    errorMessage.textContent = "Incorrect password!";
+    errorMessage.textContent = "Hai to aa, ni to nikal!";
     navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
     if (navigator.vibrate) {
       navigator.vibrate(100); // Vibrate for 100 milliseconds
